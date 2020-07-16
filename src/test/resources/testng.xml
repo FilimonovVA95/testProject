@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="1.Личный кабинет клиента">
+
+    <test name="C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'" >
+        <classes>
+            <class name="company.name.CustomerAccount.C35OrderOnYourAudienceTest" />
+        </classes>
+    </test>
+
+<!--    <test name="Группа include" >-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <exclude name="exclude"/>-->
+<!--                <include name="include" />-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <packages>-->
+<!--            <package name="company.name.CustomerAccount" />-->
+<!--        </packages>-->
+<!--    </test>-->
+
+<!--    <test name="1.5 Создание тестов" >-->
+<!--        <packages>-->
+<!--            <package name="company.name.CustomerAccount" />-->
+<!--        </packages>-->
+<!--    </test>-->
+
+</suite>
+
+
+
+

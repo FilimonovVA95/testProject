@@ -3,7 +3,6 @@ package company.name.character.clients;
 import company.name.ClientRate;
 
 public class ClientForC35 extends AbstractClient {
-
     static {
         stand = getPreprodStand();
         email = "yovahe4886@nalafx.com";

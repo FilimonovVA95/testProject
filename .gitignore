@@ -2,3 +2,4 @@
 /build/
 /testProject.iml
 /.gradle/
+/.allure/
