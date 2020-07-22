@@ -1,32 +1,59 @@
 package company.name.character.clients;
 
-
 import company.name.character.AbstractCharacter;
+import company.name.enums.TesterCareer;
+import company.name.enums.TesterEducation;
 
 public abstract class AbstractClient extends AbstractCharacter {
 
-    public static String stand;
-    public static String email;
-    public static String password;
-    public static boolean isRegistration;
+    /**
+     * Стенд для теста, email, пароль, зарегестрирован или нет, его тариф
+     */
+    public String stand;
+    public String email;
+    public String password;
+    public boolean isRegistration;
+    public Enum rate;
 
-    public static Enum rate;
+    /**
+     * Данные для регистрации (имя, должность, имя компании, номер телефона, сайт
+     */
 
-    public static String name;
-    public static String position;
-    public static String company;
-    public static String numberPhone;
-    public static String site;
+    public String name;
+    public String position;
+    public String company;
+    public String numberPhone;
+    public String site;
 
-    public static int unusedUxcrowdUsers;
-    public static int unusedTheirUsers;
+    /**
+     * Доступные пользователи для тестирования
+     */
 
-    public static String nameTest;
-    public static String siteTest;
-    public static String information;
-    public static String segmentName;
-    public static String task;
+    public int unusedUxcrowdUsers;
+    public int unusedTheirUsers;
 
+    /**
+     * Поля для создания теста. Имя теста, тестируемый сайт, информация, имя сегмента, задачи
+     */
+    public String nameTest;
+    public String siteTest;
+    public String information;
+    public String segmentName;
+    public String task;
+
+    /**
+     * Поля данных профиля
+     */
+
+    public String fioProfile;
+    public String dataBirth;
+    public String address;
+    public boolean isMan;
+    public boolean isMarried;
+    public TesterEducation education;
+    public TesterCareer career;
+    public String income;
+    public int children;
 }
 
 

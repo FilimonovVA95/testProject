@@ -12,12 +12,9 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
-import static company.name.character.clients.ClientForC35.*;
 import static company.name.helpers.DriverHelper.byTestId;
-import static company.name.helpers.DriverHelper.byClass;
 import static io.qameta.allure.Allure.step;
 
 
@@ -32,39 +29,40 @@ public class C35OrderOnYourAudienceTest {
         Configuration.startMaximized = true;
     }
 
-
     @Epic("1.Личный кабинет клиента")
     @Feature("1.5 Создание тестов")
     @Story("C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'")
     @Description(value = "C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'")
     @Severity(value = SeverityLevel.CRITICAL)
-    @Test(groups = "include")
+    @Test(description = "C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'", groups = {"include", "C35", "1.5.6", "1.5"})
     public void OrderOnYourAudienceTest() {
 
         step("Step 1. Перейти на страницу сайта https://preprod.uxcrowd.ru/", () -> {
-            Selenide.open(stand);
+            Selenide.open(user.stand);
         });
 
         step("Step 2. Нажать кнопку 'Войти'", () -> {
-            $(by("id" ,"header-lk-button")).click();
+            if ($(byTestId("Logout button")).isDisplayed())
+                $(byTestId("Logout button")).click();
+            $(byTestId("Login menu button")).click();
         });
 
         step("Step 3. Авторизируемся", () -> {
-            $(by("name" ,"login")).shouldHave(visible);
-            $(by("name" ,"login")).sendKeys(email);
-            $(by("type" ,"password")).sendKeys(password);
-            $(by("ng-tr" ,"WHE1.WHE4")).click();
+            $(byTestId("Email input")).shouldHave(visible);
+            $(byTestId("Email input")).sendKeys(user.email);
+            $(byTestId("Password input")).sendKeys(user.password);
+            $(byTestId("Login button")).click();
         });
 
         step("Step 4. Нажать на 'Создать новый тест'", () -> {
-            $(byClass("MuiButton-label")).click();
+            $(byTestId("New test client menu button")).click();
         });
 
         step("Step 5. Вводим название теста, адрес сайта и вводную информацию", () -> {
-            $(byTestId("Test name input")).setValue(nameTest);
-            $(byTestId("Address site input")).setValue(siteTest);
+            $(byTestId("Test name input")).setValue(user.nameTest);
+            $(byTestId("Address site input")).setValue(user.siteTest);
             $(byTestId("Information textarea")).setValue(deleteField);
-            $(byTestId("Information textarea")).setValue(information);
+            $(byTestId("Information textarea")).setValue(user.information);
         });
 
         step("Step 6. Нажать кнопку 'К выбору аудитории'", () -> {
@@ -77,7 +75,7 @@ public class C35OrderOnYourAudienceTest {
             $(byXpath("//div[@class='sc-uJMKN eAWZZu']//label[2]//div[1]")).click();
             $(byTestId("Users count input")).setValue(deleteField);
             $(byTestId("Users count input")).setValue("3");
-            unusedTheirUsers -= 3;
+            user.unusedTheirUsers -= 3;
         });
 
         step("Step 8. Нажать кнопку 'К заданиям'", () -> {

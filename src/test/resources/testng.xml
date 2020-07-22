@@ -3,17 +3,21 @@
 
 <suite name="1.Личный кабинет клиента">
 
-    <test name="C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'" >
-        <classes>
-            <class name="company.name.CustomerAccount.C35OrderOnYourAudienceTest" />
-        </classes>
-    </test>
+<!--    <test name="C35 1.5.6 Заказ теста на своей аудитории(веб-сайт), тариф 'Бесплатный'" >-->
+<!--                <groups>-->
+<!--                    <run>-->
+<!--                        <include name="C35" />-->
+<!--                    </run>-->
+<!--                </groups>-->
+<!--                <packages>-->
+<!--                    <package name="company.name.CustomerAccount" />-->
+<!--                </packages>-->
+<!--    </test>-->
 
-<!--    <test name="Группа include" >-->
+<!--    <test name="C809 4.1.1 Заполнение корректных данных профиля тестировщика (мужской профиль)" >-->
 <!--        <groups>-->
 <!--            <run>-->
-<!--                <exclude name="exclude"/>-->
-<!--                <include name="include" />-->
+<!--                <include name="C809" />-->
 <!--            </run>-->
 <!--        </groups>-->
 <!--        <packages>-->
@@ -21,7 +25,23 @@
 <!--        </packages>-->
 <!--    </test>-->
 
+    <test name="Группа include" >
+        <groups>
+            <run>
+                <include name="include" />
+            </run>
+        </groups>
+        <packages>
+            <package name="company.name.CustomerAccount" />
+        </packages>
+    </test>
+
 <!--    <test name="1.5 Создание тестов" >-->
+    <!--    <groups>-->
+    <!--        <run>-->
+    <!--           <include name="1.5" />-->
+    <!--        </run>-->
+    <!--    </groups>-->
 <!--        <packages>-->
 <!--            <package name="company.name.CustomerAccount" />-->
 <!--        </packages>-->

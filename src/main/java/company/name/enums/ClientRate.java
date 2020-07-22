@@ -1,4 +1,4 @@
-package company.name;
+package company.name.enums;
 
 public enum ClientRate {
     FREE,

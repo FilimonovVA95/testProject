@@ -1,0 +1,11 @@
+package company.name.enums;
+
+public enum TesterCareer {
+    DEPARTMENT_HEAD,
+    SPECIALIST_HIGHER_EDUCATION_WITHOUT_SUBMISSIONS,
+    WORKER_OF_ANY_QUALIFICATION,
+    FREELANCER,
+    STUDENT,
+    HOUSEWIFE,
+    UNEMPLOYED
+}
